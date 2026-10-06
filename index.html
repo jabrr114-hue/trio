@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>trio | منصة تحصيلي</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,Tahoma,sans-serif;
+ background:#faf9ff;
+ color:#25213d
+}
+header{
+ background:white;
+ padding:18px 7%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ border-bottom:1px solid #eee
+}
+.logo{
+ font-size:30px;
+ font-weight:900;
+ color:#7055ed
+}
+nav a{
+ margin:0 12px;
+ text-decoration:none;
+ color:#666
+}
+.btn{
+ border:0;
+ background:#7055ed;
+ color:white;
+ padding:13px 22px;
+ border-radius:14px;
+ font-weight:bold
+}
+.hero{
+ padding:80px 8%;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:50px;
+ align-items:center;
+ background:linear-gradient(135deg,#faf8ff,#eafaff)
+}
+.hero h1{
+ font-size:55px;
+ margin:15px 0
+}
+.hero h1 span{color:#7055ed}
+.hero p{
+ color:#686579;
+ line-height:2;
+ font-size:18px
+}
+.preview{
+ background:white;
+ padding:30px;
+ border-radius:28px;
+ box-shadow:0 20px 60px #5552  ;
+}
+.section{padding:70px 8%}
+.title{text-align:center;margin-bottom:35px}
+.title h2{font-size:35px}
+.cards{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:18px
+}
+.card{
+ background:white;
+ padding:25px;
+ border-radius:22px;
+ border:1px solid #eee;
+ cursor:pointer;
+ transition:.2s
+}
+.card:hover{
+ transform:translateY(-5px);
+ box-shadow:0 15px 40px #5551
+}
+.icon{
+ width:55px;
+ height:55px;
+ border-radius:17px;
+ background:#eee9ff;
+ display:grid;
+ place-items:center;
+ font-size:25px
+}
+.card h3{font-size:21px}
+.card p{color:#777;font-size:14px}
+.video{
+ margin-top:20px;
+ background:#17152a;
+ height:300px;
+ border-radius:25px;
+ color:white;
+ display:grid;
+ place-items:center;
+ font-size:55px
+}
+.test{
+ margin-top:20px;
+ background:#f0edff;
+ padding:25px;
+ border-radius:20px
+}
+footer{
+ background:#211e38;
+ color:white;
+ padding:35px 8%
+}
+@media(max-width:800px){
+ .hero{grid-template-columns:1fr}
+ .hero h1{font-size:42px}
+ .cards{grid-template-columns:1fr 1fr}
+ nav{display:none}
+}
+@media(max-width:500px){
+ .cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">trio</div>
+
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#subjects">الأقسام</a>
+<a href="#lessons">الدروس</a>
+</nav>
+
+<button class="btn" onclick="start()">ابدئي الآن</button>
+</header>
+
+<section class="hero" id="home">
+
+<div>
+<small>✨ منصة تعليمية للتحصيلي</small>
+
+<h1>
+تعلّمي.<br>
+اختبري.<br>
+<span>وتقدّمي.</span>
+</h1>
+
+<p>
+منصة trio تساعدك على الاستعداد للتحصيلي
+من خلال فيديوهات الشرح والاختبارات والتدريب.
+</p>
+
+<button class="btn" onclick="start()">ابدئي الاختبار</button>
+</div>
+
+<div class="preview">
+<h2>اختبار تحصيلي</h2>
+<p>⏱️ مؤقت للاختبار</p>
+<p>📝 أسئلة متنوعة</p>
+<p>🎯 نتيجتك تظهر مباشرة</p>
+<p>💡 شرح للإجابة بعد الاختبار</p>
+</div>
+
+</section>
+
+<section class="section" id="subjects">
+
+<div class="title">
+<small>اختاري القسم</small>
+<h2>أقسام التحصيلي</h2>
+</div>
+
+<div class="cards">
+
+<div class="card" onclick="lesson('الرياضيات')">
+<div class="icon">∑</div>
+<h3>الرياضيات</h3>
+<p>شرح وتدريبات واختبارات</p>
+</div>
+
+<div class="card" onclick="lesson('الكيمياء')">
+<div class="icon">⚗️</div>
+<h3>الكيمياء</h3>
+<p>شرح المفاهيم والتطبيقات</p>
+</div>
+
+<div class="card" onclick="lesson('الفيزياء')">
+<div class="icon">⚡</div>
+<h3>الفيزياء</h3>
+<p>القوانين والمسائل</p>
+</div>
+
+<div class="card" onclick="lesson('الأحياء')">
+<div class="icon">🧬</div>
+<h3>الأحياء</h3>
+<p>المراجعة والأسئلة</p>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="lessons">
+
+<div class="title">
+<h2 id="lessonTitle">درس تجريبي</h2>
+</div>
+
+<div class="video">
+▶️
+</div>
+
+<div class="test">
+<h3>اختبار الدرس</h3>
+<p>بعد مشاهدة الفيديو انتقلي للاختبار مباشرة.</p>
+<button class="btn" onclick="start()">ابدئي الاختبار</button>
+</div>
+
+</section>
+
+<footer>
+<b>trio</b> — منصة تعليمية لتحصيلي 💜💙💛
+</footer>
+
+<script>
+
+function lesson(name){
+ document.getElementById("lessonTitle").innerText=
+ "درس "+name;
+ location.hash="lessons";
+}
+
+function start(){
+
+ let name=prompt("اكتبي اسمك للبدء:");
+
+ if(!name)return;
+
+ let answer=prompt(
+ "اختبار تجريبي\n\n"+
+ "كم يساوي 3 × 8 ؟\n\n"+
+ "اكتبي الإجابة:"
+ );
+
+ if(answer==="24"){
+   alert("أحسنتِ "+name+" 🎉\n\nدرجتك: 100%\n\nشرح السؤال: 3 × 8 = 24");
+ }else{
+   alert(
+    "اسم الطالبة: "+name+
+    "\n\nدرجتك: 0%\n\n"+
+    "شرح السؤال: 3 × 8 = 24"
+   );
+ }
+
+}
+
+</script>
+
+</body>
+</html>
